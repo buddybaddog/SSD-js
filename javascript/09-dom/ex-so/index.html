@@ -4,10 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  
+  <!-- <button>9a</button>
+
+  <button class="js-9b-button">9b</button>
+  <br> -->
+  <button onclick="
+    document.querySelector('.js-you-chose')
+      .innerHTML = 'You chose: heads'
+    ">heads</button>
+  <button onclick="
+    document.querySelector('.js-you-chose')
+      .innerHTML = 'You chose: tails'
+    ">tails</button>
+
+  <p class="js-you-chose"></p>
+
+  <input placeholder="Name" class="js-name-input" onkeydown="
+    // handleCostKeydown(event);
+    if(event.key === 'Enter') {
+      displayMessage();
+    }
+  ">
+
+  <button onclick="
+    displayMessage();
+  ">Submit</button>
+
+  <p class="js-message"></p>
 
   <script src="index.js">
     
