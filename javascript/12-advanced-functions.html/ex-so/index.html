@@ -3,12 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>App</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  
+  <button onclick="
+    start();  
+  " class="js-start-button">Start</button>
+  <br>
+  <button onclick="
+    addToCart();
+  " class="js-add-to-cart-button">Add to cart</button>
+  <p class="js-message"></p>
 
+  <br>
+
+  <button onclick="
+    messages++;
+    displayNotification();
+  " class="js-add-button">Add</button>
+
+  <button onclick="
+    messages--;
+    displayNotification();
+  " class="js-remove-butotn">Remove</button>
   <script src="index.js">
     
   </script>
