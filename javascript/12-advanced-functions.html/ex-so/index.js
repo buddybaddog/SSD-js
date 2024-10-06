@@ -16,28 +16,43 @@ runTwice(function() {
 
 runTwice(add);
 
-function start() {
+document.querySelector('.js-start-button')
+  .addEventListener('click', () => {
   const buttonElement = document.querySelector('.js-start-button');
   buttonElement.innerHTML = 'Loading...';
 
-  setTimeout(function() {
+  setTimeout(() => {
       buttonElement.innerHTML = 'Finished';
     
   }, 1000);
-}
+});
 
 let timeoutId;
 
-function addToCart() {
+document.querySelector('.js-add-to-cart-button')
+  .addEventListener('click', () => {
   const messageElement = document.querySelector('.js-message');
   messageElement.innerHTML = 'Added';
 
   clearTimeout(timeoutId);
 
-  timeoutId = setTimeout(function() {
+  timeoutId = setTimeout(() => {
     messageElement.innerHTML = '';
   }, 2000);
-}
+});
+
+document.querySelector('.js-add-button')
+  .addEventListener('click', () => {
+    messages++;
+    displayNotification();
+  });
+
+document.querySelector('.js-remove-button')
+  .addEventListener('click', () => {
+    messages--;
+    displayNotification();
+  })
+
 let messages = 2;
 let intervalId;
 
@@ -52,7 +67,7 @@ function displayNotification() {
 
   isDisplayingNotification = true;
 
-  intervalId = setInterval(function() {
+  intervalId = setInterval(() => {
     // document.title = 'App';
     if(document.title === 'App' && messages > 0) {
       document.title = `(${messages}) New messages`;
