@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script type="module">
+    import dayjs from 'https://unpkg.com/dayjs@1.11.10/esm/index.js';
+    import isSatSun from './checkWeekend.js';
+
+    const today = dayjs();
+    const date5DaysAfter = today.add(5, 'day');
+    const date1MonthAfter = today.add(1, 'month');
+
+    // const dayString = date.format('MMMM D');
+
+    const date1MonthBefore = today.subtract(1, 'month');
+
+    console.log(date5DaysAfter.format('MMMM D'));
+
+    console.log(date1MonthAfter.format('MMMM D'));
+
+    console.log(date1MonthBefore.format('MMMM D'));
+
+    console.log(date5DaysAfter.format('dddd'));
+
+
+    console.log(today.format('dddd, MMMM D'));
+    console.log(isSatSun(today));
+
+    console.log(date5DaysAfter.format('dddd, MMMM D'));
+    console.log(isSatSun(date5DaysAfter));
+
+    console.log(date1MonthAfter.format('dddd, MMMM D'));
+    console.log(isSatSun(date1MonthAfter));
+
+    console.log(date1MonthBefore.format('dddd, MMMM D'));
+    console.log(isSatSun(date1MonthBefore));
+
+    // function isWeekend(date) {
+    //     const dayOfWeek = date.format('dddd');
+    //     return dayOfWeek === 'Saturday' || dayOfWeek === 'Sunday';
+    //   }
+
+    //   // Test this function using a few different dates.
+    //   let date = dayjs();
+    //   console.log(date.format('dddd, MMMM D'));
+    //   console.log(isWeekend(date));
+
+    //   date = dayjs().add(2, 'day');
+    //   console.log(date.format('dddd, MMMM D'));
+    //   console.log(isWeekend(date));
+
+    //   date = dayjs().add(4, 'day');
+    //   console.log(date.format('dddd, MMMM D'));
+    //   console.log(isWeekend(date));
+
+    //   date = dayjs().add(6, 'day');
+    //   console.log(date.format('dddd, MMMM D'));
+    //   console.log(isWeekend(date));
+
+
+  </script>
+</body>
+</html>
